@@ -1,8 +1,0 @@
-{
-  "IsEncrypted": false,
-  "Values": {
-    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
-    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
-    "ConnectionStrings__DefaultConnection": "Server=productappapibackend.mysql.database.azure.com;Database=myproducts;Uid=cloudadmin;Pwd=Master@123;"
-  }
-}

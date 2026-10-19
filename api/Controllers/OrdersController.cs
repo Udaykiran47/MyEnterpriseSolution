@@ -1,6 +1,7 @@
 using api.Data;
 using Azure.Storage.Queues;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 [Route("api/[controller]")]
 [ApiController]
