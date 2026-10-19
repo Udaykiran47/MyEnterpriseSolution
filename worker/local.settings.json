@@ -1,0 +1,9 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=productappstorage19;AccountKey=YOUR_ACTUAL_ACCOUNT_KEY;EndpointSuffix=core.windows.net",
+    "QueueStorage": "DefaultEndpointsProtocol=https;AccountName=productappstorage19;AccountKey=YOUR_ACTUAL_ACCOUNT_KEY;EndpointSuffix=core.windows.net",
+    "DefaultConnection": "Server=your-mysql-server.mysql.database.azure.com;Database=myproducts;Uid=cloudadmin;Pwd=Master@123;SslMode=Required;",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated"
+  }
+}
