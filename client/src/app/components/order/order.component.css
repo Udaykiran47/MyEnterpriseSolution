@@ -1,0 +1,50 @@
+.container {
+  max-width: 900px;
+}
+
+h2, h3 {
+  color: #333;
+  font-weight: 600;
+}
+
+form {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.table {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.table th {
+  background-color: #343a40;
+  color: #fff;
+  border: none;
+}
+
+/* Custom styling for status badges */
+.badge {
+  font-size: 0.85rem;
+  padding: 0.5em 0.75em;
+  border-radius: 4px;
+}
+
+.bg-warning {
+  background-color: #ffc107 !important;
+  color: #212529;
+}
+
+.bg-info {
+  background-color: #17a2b8 !important;
+  color: #fff;
+}
+
+.bg-success {
+  background-color: #28a745 !important;
+  color: #fff;
+}

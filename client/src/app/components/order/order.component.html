@@ -1,0 +1,66 @@
+<div class="container mt-4">
+  <h2>Async Product Processing Dashboard</h2>
+  
+  <!-- Product Submission Form -->
+  <form (ngSubmit)="submitOrder()" class="mb-4">
+    <div class="mb-3">
+      <label class="form-label">Product Name</label>
+      <input 
+        type="text" 
+        [(ngModel)]="newOrder.productName" 
+        name="productName" 
+        class="form-control" 
+        placeholder="Enter product name..." 
+        required 
+      />
+    </div>
+    
+    <div class="mb-3">
+      <label class="form-label">Price</label>
+      <input 
+        type="number" 
+        [(ngModel)]="newOrder.price" 
+        name="price" 
+        class="form-control" 
+        placeholder="0.00" 
+        required 
+      />
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit Order</button>
+  </form>
+
+  <hr />
+
+  <!-- Live Tracking Table -->
+  <h3>Live Tracking Status</h3>
+  <table class="table table-striped align-middle">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Product</th>
+        <th>Status</th>
+        <th>Processing Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let o of orders">
+        <td>{{ o.id }}</td>
+        <td>{{ o.productName }}</td>
+        <td>
+          <span [ngClass]="{
+            'badge bg-warning text-dark': o.status === 'Pending',
+            'badge bg-info text-dark': o.status === 'Processing',
+            'badge bg-success': o.status === 'Completed'
+          }">
+            {{ o.status }}
+          </span>
+        </td>
+        <td>{{ o.processingDetails }}</td>
+      </tr>
+      <tr *ngIf="orders.length === 0">
+        <td colspan="4" class="text-center text-muted">No orders found. Submit one above!</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
