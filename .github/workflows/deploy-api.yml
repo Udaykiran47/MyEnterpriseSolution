@@ -18,7 +18,7 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Publish API
-      run: dotnet publish api/YourApiProject.csproj --configuration Release --output ./publish_output
+      run: dotnet publish api/api.csproj --configuration Release --output ./publish_output
 
     - name: Deploy to Azure App Service
       uses: azure/webapps-deploy@v3
@@ -26,3 +26,4 @@ jobs:
         app-name: 'your-api-app-name'
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         package: ./publish_output
+
