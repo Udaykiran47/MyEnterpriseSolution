@@ -26,4 +26,4 @@ jobs:
           action: "upload"
           app_location: "./client" # App source code path
           api_location: "" # Blank since backend is hosted on App Service
-          output_location: "dist/client" # Built output folder
+          output_location: "dist/client/browser" # Corrected path where index.html is generated
