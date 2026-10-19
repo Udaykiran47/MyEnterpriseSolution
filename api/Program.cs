@@ -15,7 +15,6 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
-
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 builder.Services.AddCors(options =>
@@ -24,7 +23,7 @@ builder.Services.AddCors(options =>
         policy =>
         {
             policy.WithOrigins(
-                    "https://calm-dune-08e4a6e10.2.azurestaticapps.net", // MUST match your active frontend URL
+                    "https://calm-dune-08e4a6e10.2.azurestaticapps.net", // Your active frontend URL
                     "http://localhost:4200"
                   )
                   .AllowAnyHeader()
@@ -32,7 +31,6 @@ builder.Services.AddCors(options =>
         });
 });
 
-//New Changes Added Uday
 // Configure Swagger/OpenAPI documentation
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -51,20 +49,18 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
     app.UseSwaggerUI();
 }
 
-
-// Make sure to use the policy before mapping controllers
-app.UseCors(MyAllowSpecificOrigins);
-
 app.UseHttpsRedirection();
 
-app.MapFallbackToFile("index.html"); // Routes client-side requests back to Angular
+// 1. CORS MUST be placed early, before routing, static files, and controllers
+app.UseCors(MyAllowSpecificOrigins);
 
+// 2. Optional root redirect to Swagger
+app.MapGet("/", () => Results.Redirect("/swagger"));
 
-app.UseStaticFiles();
-// UseCors MUST be placed after UseHttpsRedirection, but before UseAuthorization
-app.UseCors("AllowAngularApp");
-
+// 3. Authentication & Authorization
 app.UseAuthorization();
 
+// 4. Map API controllers last so they handle the /api/ routes properly
 app.MapControllers();
+
 app.Run();
