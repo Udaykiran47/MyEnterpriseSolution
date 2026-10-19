@@ -1,0 +1,14 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.Hosting.Lifetime": "Information",
+      "Microsoft.Azure.Functions.Worker": "Warning"
+    }
+  },
+  "ConnectionStrings": {
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=productappstorage19;AccountKey=cDWgRRLHm77sgFiAHHZdDrkC+69AG53bzCbxV+5hJJTGfU1Y+uCZOwCqoSekn/clGrs4/bzTITEj+ASt/QGh3Q==;EndpointSuffix=core.windows.net",
+    "QueueStorage": "DefaultEndpointsProtocol=https;AccountName=productappstorage19;AccountKey=cDWgRRLHm77sgFiAHHZdDrkC+69AG53bzCbxV+5hJJTGfU1Y+uCZOwCqoSekn/clGrs4/bzTITEj+ASt/QGh3Q==;EndpointSuffix=core.windows.net",
+    "DefaultConnection": "Server=productappapibackend.mysql.database.azure.com;Database=myproducts;Uid=cloudadmin;Pwd=Master@123;SslMode=Required;"
+  }
+}
