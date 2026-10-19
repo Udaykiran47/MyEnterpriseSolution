@@ -41,6 +41,7 @@ public class ProcessOrderFunction
                 order.ProcessingDetails = "Processing Details... Order successfully fulfilled and verified.";
                 order.UpdatedAt = DateTime.UtcNow;
                 await _context.SaveChangesAsync();
+
             }
         }
     }
