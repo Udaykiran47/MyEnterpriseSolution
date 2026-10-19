@@ -24,9 +24,8 @@ builder.Services.AddCors(options =>
         policy =>
         {
             policy.WithOrigins(
-                    "https://calm-dune-08e4a6e10.2.azurestaticapps.net", // REPLACE with your exact Azure Static Web App URL
-                    "https://thankful-moss-02c74aa10.3.azurestaticapps.net", // Include alternative URL if testing both
-                    "http://localhost:4200"                              // For local Angular testing
+                    "https://calm-dune-08e4a6e10.2.azurestaticapps.net", // MUST match your active frontend URL
+                    "http://localhost:4200"
                   )
                   .AllowAnyHeader()
                   .AllowAnyMethod();
