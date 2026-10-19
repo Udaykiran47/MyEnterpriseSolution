@@ -7,6 +7,7 @@ var host = new HostBuilder()
     {
         // Register your database context or custom services here if needed
         // e.g., services.AddDbContext<MyDbContext>(...);
+        // Just and Example
     })
     .Build();
 
